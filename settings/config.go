@@ -12,7 +12,8 @@ var (
 )
 
 const (
-	URL = "https://google-translation-unlimited.p.rapidapi.com/translate"
+	URL     = "https://google-translation-unlimited.p.rapidapi.com/translate"
+	LogPath = "/var/log/transutil/"
 )
 
 func Usage() {

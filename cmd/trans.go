@@ -50,8 +50,10 @@ func Translate() {
 			os.Exit(0)
 		}
 
-		fmt.Printf("Original text: %s\nTranslated text: %s\n",
+		Log = fmt.Sprintf("Original text: %s\nTranslated text: %s\n",
 			apiResponse.TranslationData.Original,
 			apiResponse.TranslationData.Translation)
+		WriteLogs()
+		fmt.Printf("%s", Log)
 	}
 }

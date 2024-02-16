@@ -1,6 +1,7 @@
 package cmd
 
 var Url string
+var Log string
 
 type TranslationData struct {
 	Original    string `json:"original_text"`

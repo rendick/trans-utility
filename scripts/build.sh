@@ -34,6 +34,9 @@ configuration () {
         go build -o transutil
 		mv transutil ./build/
 		echo -e "\nThe binary file was build into this folder: ${BOLD}${BUILD_DIR}/build/${CLEAR}"
+		sudo ./build/transutil
+		sudo chmod 777 /var/log/transutil/
+		sudo chmod 777 /var/log/transutil/transutil.log
     else
         echo 'Invalid installation type!'
     fi
