@@ -1,0 +1,14 @@
+# binaries
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# test binary
+*.test
+
+/settings/env.go
+
+
