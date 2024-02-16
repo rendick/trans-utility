@@ -1,4 +1,4 @@
-module github.com/rendick/cts
+module github.com/rendick/trans-utility
 
 go 1.22.0
 

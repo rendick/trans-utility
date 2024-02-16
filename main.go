@@ -1,6 +1,6 @@
 package main
 
-import "github.com/rendick/cts/cmd"
+import "github.com/rendick/trans-utility/cmd"
 
 func main() {
 	cmd.Switch()

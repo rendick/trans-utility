@@ -9,12 +9,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rendick/cts/settings"
+	"github.com/rendick/trans-utility/settings"
 )
 
 func Translate() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: cts <language you want to translate into> <text to translate>")
+		settings.Usage()
 		os.Exit(0)
 	} else {
 
@@ -24,6 +24,11 @@ func Translate() {
 		}
 
 		Url = fmt.Sprintf("texte=%s&to_lang=%s", strings.Join(words, " "), os.Args[1])
+		if words == nil {
+			fmt.Println(settings.Bold + "Enter your senctence!\n" + settings.Reset)
+			settings.Usage()
+			os.Exit(0)
+		}
 		payload := strings.NewReader(Url)
 
 		req, _ := http.NewRequest("POST", settings.URL, payload)
@@ -45,6 +50,8 @@ func Translate() {
 			os.Exit(0)
 		}
 
-		fmt.Printf("Original text: %s\nTranslated text: %s\n", apiResponse.TranslationData.Original, apiResponse.TranslationData.Translation)
+		fmt.Printf("Original text: %s\nTranslated text: %s\n",
+			apiResponse.TranslationData.Original,
+			apiResponse.TranslationData.Translation)
 	}
 }

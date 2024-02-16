@@ -3,7 +3,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/rendick/cts/settings"
+	"github.com/rendick/trans-utility/settings"
 )
 
 func Switch() {
@@ -14,6 +14,8 @@ func Switch() {
 		switch os.Args[1] {
 		case "--help", "-h":
 			settings.Help()
+		case "--version", "-v":
+			settings.Version()
 		default:
 			Translate()
 		}
