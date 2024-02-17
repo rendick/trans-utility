@@ -17,7 +17,7 @@ const (
 )
 
 func Usage() {
-	fmt.Println(Bold + "Usage:" + Reset + " cts <language you want to translate into> <text to translate>")
+	fmt.Println(Bold + "Usage:" + Reset + " transutil <language you want to translate into> <text to translate>")
 }
 
 func Help() {

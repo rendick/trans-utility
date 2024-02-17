@@ -31,10 +31,12 @@ configuration () {
 
         echo -e "\nPaste your API key into the API_KEY field in the ${FILE}."
     elif [[ $1 == "Building" ]] ; then
+		cd trans-utility
+		pwd
         go build -o transutil
 		mv transutil ./build/
 		echo -e "\nThe binary file was build into this folder: ${BOLD}${BUILD_DIR}/build/${CLEAR}"
-		sudo ./build/transutil
+		sudo ./build/transutil fr Hello, world!
 		sudo chmod 777 /var/log/transutil/
 		sudo chmod 777 /var/log/transutil/transutil.log
     else
